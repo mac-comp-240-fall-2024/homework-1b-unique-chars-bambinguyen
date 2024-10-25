@@ -27,12 +27,11 @@ int main() {
                        // chose 128 because it is a multiple of 8 bytes
   strcpy(string3, "A string constant copied in.\n");
 
-  // You can uncomment these to see how the strings were initialized above.
-  // Then you can comment these out again once you see that the 
-  // strings were created correctly
-  // printf ("%s", string1);
-  // printf ("%s", string2);
-  // printf ("%s", string3);
+
+  
+  printf ("%s", string1);
+  printf ("%s", string2);
+  printf ("%s", string3);
 
   // -------------------------------------------------------------
   // Thorough and exhaustive tests of hasUniqueChars()  
@@ -49,18 +48,23 @@ int main() {
   ok = hasUniqueChars(string3);
   assert(ok);
   
-  // TODO: add your tests here
+  strcpy(string3, "day");
+  ok = hasUniqueChars(string3);
+  assert(ok);
 
+  strcpy(string3, "dinner");
+  ok = hasUniqueChars(string3);
+  assert(!(ok));
 
+  strcpy(string3, "farm");
+  ok = hasUniqueChars(string3);
+  assert(ok);
 
-  // NOTE: if you add a \n to any tests, this should cause the
-  //       exit failure given. Keep this test last so you can check 
-  //       that others pass or fail as you expect them to.
   strcpy(string3, "a b cc\n");
   ok = hasUniqueChars(string3);
-  // other examples that should fail that you can place in strings
-  // are \0 or \t or \r
-  // See problem description for more details about escape sequences
+ 
+  
+  printf("All test passed! \n");
   
   return 0;
 }
